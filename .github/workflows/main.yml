@@ -20,7 +20,7 @@ jobs:
         uses: sfdx-actions/setup-sfdx@v1
       
       # Authorize a Salesforce org                  
-      # - run: echo "${{ secrets.SALESFORCE_JWT_SECRET_KEY }}" > server.key
-      - run: sfdx force:auth:jwt:grant --client-id=${{ secrets.SALESFORCE_CONSUMER_KEY }} --jwt-key-file=server.key --username=${{ secrets.SALESFORCE_USERNAME }} 
+      # - run: echo "${{ secrets.SALESFORCE_JWT_SECRET_KEY_SRAO }}" > server.key
+      - run: sfdx force:auth:jwt:grant --client-id=${{ secrets.SALESFORCE_CONSUMER_KEY_SRAO }} --jwt-key-file=server.key --username=${{ secrets.SALESFORCE_USERNAME_SRAO }} 
       - run: sfdx config:set defaultusername=srao.vlocity@gmail.com
       - run: sfdx force:source:deploy --sourcepath force-app/main/default/objects/Testobject__c
